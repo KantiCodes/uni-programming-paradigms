@@ -72,7 +72,7 @@
   (let ((a 2)) (* n a)))
 
 
-;; Return every second element of list, starting with the first element.
+; Return every second element of list, starting with the first element.
 (define (every-second-element lst)
   (if (null? lst)
       lst
@@ -115,7 +115,7 @@
 
              ))
 
-;Exercise 1.7
+;Exercise 1.7 Prop to asso, asso to prop
 
 (define (prop-to-asso lst)
   (cond ((or (null? lst) (null? (car lst))) '())
@@ -129,3 +129,19 @@
       ))
 
 (asso-to-prop '((a . 1) (b . 2)  (c . 3)))
+
+
+;Exercise 1.8
+(define weekday-plist (list 'monday 1 'tuesday 2 'wednesday 3 'thursday 4 'friday 5 'saturday 6 'sunday 7))
+
+(define (get-prop lst prop)
+  (cond ((null? lst) #f)
+        ((equal? (car lst) prop) (cadr lst))
+        (else (get-prop (cdr lst) prop))))
+
+;Exercise 1.11
+(define (counter-part-to-tail lst n)
+  (cond ((< n 0) (error "Cannot use negative tail"))
+        ((or(equal? n 0) (null? lst)) lst)
+        (else (counter-part-to-tail (cdr lst) (- n 1)))))
+      
