@@ -1,4 +1,4 @@
-#lang datalog
+
 
 
 father(C, D) :- parent (C, D), male(D).
