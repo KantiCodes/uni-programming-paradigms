@@ -32,3 +32,6 @@ stutter (x:xs) n = (repeating x n) ++ (stutter xs n)
 my_flip :: [(a,b)] -> [(b,a)]
 my_flip [] = []
 my_flip ((f,s):xs) = (s,f):my_flip xs
+
+a = [1,2]++[3,4]
+b = 4:[1, 2, 3]

@@ -13,3 +13,11 @@ ispalindrome l = (l == rev l)
 last1 :: (Eq a) => [a] -> a
 last1 (x:[]) = x
 last1 (x:xs) = last1 xs
+
+cfrac :: (Eq a, Integral t, Num a, RealFrac a1) => a1 -> a -> [t]
+cfrac r 0 = []
+cfrac r n = a : (remainfrac r1)
+                where
+                a = truncate r
+                r1 = (r - (fromIntegral a))
+                remainfrac r1 = cfrac (1/r1) (n - 1)
