@@ -21,3 +21,8 @@ cfrac r n = a : (remainfrac r1)
                 a = truncate r
                 r1 = (r - (fromIntegral a))
                 remainfrac r1 = cfrac (1/r1) (n - 1)
+
+
+
+flatten [] = []
+flatten (x:xs) = x ++ (flatten xs)
