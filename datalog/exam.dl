@@ -1,0 +1,9 @@
+#lang datalog
+
+edge(a,b).
+edge(b,c).
+edge(c,d).
+path(X,Z) :- path(X,Y), path(Y,Z).
+path(X,Y) :- edge(X,Y).
+
+r("gorilla" r("goat",r("duck", "koala", "manatee"), "impala"), ("horse"), ("ostrich") ).
